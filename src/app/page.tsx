@@ -8,17 +8,18 @@ import CursorTrail from '../components/CursorTrail/CursorTrail';
 
 export default function Home() {
   const [isDarkMode, setIsDarkMode] = useState(true);
+  const [showCursorTrail, setShowCursorTrail] = useState(true);
 
-  const toggleTheme = () => {
-    setIsDarkMode(!isDarkMode);
+  const toggleCursorTrail = () => {
+    setShowCursorTrail(!showCursorTrail);
   };
 
   return (
     <main className={`container ${isDarkMode ? 'dark-theme' : 'light-theme'}`}>
       {/* Cursor Trail Effect */}
-      <CursorTrail variant="neon" maxDots={20} />
+      {showCursorTrail && <CursorTrail variant="neon" maxDots={20} />}
       
-      {/* Theme Toggle Switch */}
+      {/* Cursor Trail Toggle Switch */}
       <div style={{ 
         position: 'fixed', 
         top: '20px', 
@@ -26,10 +27,10 @@ export default function Home() {
         zIndex: 1000 
       }}>
         <Button
-          onClick={toggleTheme}
+          onClick={toggleCursorTrail}
           isDarkMode={isDarkMode}
         >
-          {isDarkMode ? '🌙 Dark' : '☀️ Light'}
+          {showCursorTrail ? '✨ Estela ON' : '🚫 Estela OFF'}
         </Button>
       </div>
 
