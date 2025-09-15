@@ -49,6 +49,8 @@ export default function Home() {
             <span className="tech-badge">Styled Components</span>
             <span className="tech-badge">Tailwind</span>
             <span className="tech-badge">JavaScript</span>
+            <span className="tech-badge">React testing library</span>
+            <span className="tech-badge">Jest</span>
           </div>
         </div>
       </div>
