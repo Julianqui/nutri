@@ -2,11 +2,18 @@ export default function Home() {
   return (
     <main className="container">
       <div className="hero animate-fade-in-up">
-        <h1>🥗 Nutri App</h1>
-        <p>Tu aplicación de nutrición personalizada</p>
-        <div className="d-flex-center" style={{ marginTop: '2rem', gap: '1rem' }}>
-          <button className="btn btn--large">Comenzar Ahora</button>
-          <button className="btn btn--outline btn--large">Ver Demo</button>
+        <h1>🥗 Julian Quinteiro</h1>
+        <p>Frontend developer</p>
+        <div className="tech-stack" style={{ marginTop: '2rem', textAlign: 'center' }}>
+          <p style={{ marginBottom: '1rem', fontSize: '1.1rem', fontWeight: '600' }}>Tecnologías:</p>
+          <div className="d-flex-center" style={{ gap: '1rem', flexWrap: 'wrap' }}>
+            <span className="tech-badge">Next.js</span>
+            <span className="tech-badge">React.js</span>
+            <span className="tech-badge">TypeScript</span>
+            <span className="tech-badge">Styled Components</span>
+            <span className="tech-badge">Tailwind</span>
+            <span className="tech-badge">JavaScript</span>
+          </div>
         </div>
       </div>
       
@@ -33,7 +40,7 @@ export default function Home() {
       <div className="card card--elevated mt-5" style={{ textAlign: 'center', padding: '3rem' }}>
         <h2 className="text--gradient mb-3">¿Listo para transformar tu nutrición?</h2>
         <p className="mb-4" style={{ fontSize: '1.1rem', color: '#666' }}>
-          Únete a miles de usuarios que ya están mejorando su salud con Nutri App
+          Únete a miles de usuarios que ya están mejorando su salud con Julian Quinteiro Frontend developer
         </p>
         <div className="d-flex-center" style={{ gap: '1rem' }}>
           <button className="btn btn--large animate-pulse">Registrarse Gratis</button>
