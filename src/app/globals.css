@@ -4,6 +4,7 @@
   margin: 0;
 }
 
+/* Dark Theme (Default) */
 html {
   background: #0f0f23 !important;
   min-height: 100vh;
@@ -21,11 +22,56 @@ body {
   min-height: 100vh;
   margin: 0;
   padding: 0;
+  transition: all 0.3s ease;
 }
 
 #__next {
   background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%) !important;
   min-height: 100vh;
+  transition: all 0.3s ease;
+}
+
+/* Light Theme */
+.light-theme {
+  background: #ffffff !important;
+  color: #000000 !important;
+}
+
+.light-theme body {
+  background: #ffffff !important;
+  color: #000000 !important;
+}
+
+.light-theme #__next {
+  background: #ffffff !important;
+}
+
+.light-theme .hero h1 {
+  color: #000000 !important;
+  text-shadow: none !important;
+}
+
+.light-theme .hero p {
+  color: #333333 !important;
+}
+
+.light-theme .tech-badge {
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%) !important;
+  color: white !important;
+}
+
+.light-theme .feature-card {
+  background: #f8f9fa !important;
+  border: 1px solid #dee2e6 !important;
+  color: #000000 !important;
+}
+
+.light-theme .feature-card h3 {
+  color: #007bff !important;
+}
+
+.light-theme .feature-card p {
+  color: #333333 !important;
 }
 
 .container {

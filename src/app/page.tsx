@@ -1,6 +1,42 @@
+'use client';
+
+import { useState } from 'react';
+
 export default function Home() {
+  const [isDarkMode, setIsDarkMode] = useState(true);
+
+  const toggleTheme = () => {
+    setIsDarkMode(!isDarkMode);
+  };
+
   return (
-    <main className="container">
+    <main className={`container ${isDarkMode ? 'dark-theme' : 'light-theme'}`}>
+      {/* Theme Toggle Switch */}
+      <div style={{ 
+        position: 'fixed', 
+        top: '20px', 
+        right: '20px', 
+        zIndex: 1000 
+      }}>
+        <button
+          onClick={toggleTheme}
+          style={{
+            background: isDarkMode ? 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' : '#f0f0f0',
+            border: 'none',
+            borderRadius: '25px',
+            padding: '10px 20px',
+            color: isDarkMode ? 'white' : '#333',
+            cursor: 'pointer',
+            fontSize: '14px',
+            fontWeight: '600',
+            boxShadow: '0 4px 15px rgba(0, 0, 0, 0.2)',
+            transition: 'all 0.3s ease'
+          }}
+        >
+          {isDarkMode ? '🌙 Dark' : '☀️ Light'}
+        </button>
+      </div>
+
       <div className="hero animate-fade-in-up">
         <h1>🥗 Julian Quinteiro</h1>
         <p>Frontend developer</p>
@@ -17,14 +53,37 @@ export default function Home() {
         </div>
       </div>
       
-      <div style={{ marginTop: '4rem', textAlign: 'center' }}>
-        <h2 style={{ color: '#60a5fa', fontSize: '2.5rem', marginBottom: '3rem' }}>Mi Experiencia</h2>
+      <div style={{ 
+        marginTop: '4rem', 
+        textAlign: 'center',
+        background: isDarkMode 
+          ? 'linear-gradient(135deg, rgba(15, 15, 35, 0.8) 0%, rgba(26, 26, 46, 0.6) 50%, rgba(22, 33, 62, 0.8) 100%)'
+          : '#ffffff',
+        padding: '3rem 0',
+        borderRadius: '20px',
+        border: isDarkMode 
+          ? '1px solid rgba(71, 85, 105, 0.2)'
+          : '1px solid #dee2e6',
+        backdropFilter: 'blur(10px)',
+        boxShadow: isDarkMode 
+          ? '0 8px 32px rgba(0, 0, 0, 0.3)'
+          : '0 8px 32px rgba(0, 0, 0, 0.1)'
+      }}>
+        <h2 style={{ 
+          color: isDarkMode ? '#60a5fa' : '#000000', 
+          fontSize: '2.5rem', 
+          marginBottom: '3rem' 
+        }}>Mi Experiencia</h2>
         
         <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 2rem' }}>
           {/* Experiencia 1 - Globant */}
           <div style={{
-            background: 'rgba(30, 41, 59, 0.6)',
-            border: '1px solid rgba(71, 85, 105, 0.3)',
+            background: isDarkMode 
+              ? 'rgba(30, 41, 59, 0.6)' 
+              : '#f8f9fa',
+            border: isDarkMode 
+              ? '1px solid rgba(71, 85, 105, 0.3)' 
+              : '1px solid #dee2e6',
             borderRadius: '12px',
             padding: '2rem',
             marginBottom: '2rem',
@@ -54,7 +113,7 @@ export default function Home() {
             <div style={{ marginBottom: '1rem' }}>
               <span style={{
                 background: 'rgba(96, 165, 250, 0.1)',
-                color: '#ffffff',
+                color: isDarkMode ? '#ffffff' : '#000000',
                 padding: '0.3rem 0.8rem',
                 borderRadius: '12px',
                 fontSize: '0.9rem',
@@ -82,20 +141,24 @@ export default function Home() {
             </div>
             
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
-              <span style={{ background: 'rgba(96, 165, 250, 0.1)', color: '#ffffff', padding: '0.3rem 0.8rem', borderRadius: '12px', fontSize: '0.8rem' }}>React</span>
-              <span style={{ background: 'rgba(96, 165, 250, 0.1)', color: '#ffffff', padding: '0.3rem 0.8rem', borderRadius: '12px', fontSize: '0.8rem' }}>Next.js</span>
-              <span style={{ background: 'rgba(96, 165, 250, 0.1)', color: '#ffffff', padding: '0.3rem 0.8rem', borderRadius: '12px', fontSize: '0.8rem' }}>TypeScript</span>
-              <span style={{ background: 'rgba(96, 165, 250, 0.1)', color: '#ffffff', padding: '0.3rem 0.8rem', borderRadius: '12px', fontSize: '0.8rem' }}>TailwindCSS</span>
-              <span style={{ background: 'rgba(96, 165, 250, 0.1)', color: '#ffffff', padding: '0.3rem 0.8rem', borderRadius: '12px', fontSize: '0.8rem' }}>GraphQL</span>
-              <span style={{ background: 'rgba(96, 165, 250, 0.1)', color: '#ffffff', padding: '0.3rem 0.8rem', borderRadius: '12px', fontSize: '0.8rem' }}>Jest</span>
-              <span style={{ background: 'rgba(96, 165, 250, 0.1)', color: '#ffffff', padding: '0.3rem 0.8rem', borderRadius: '12px', fontSize: '0.8rem' }}>Cypress</span>
+              <span style={{ background: isDarkMode ? 'rgba(96, 165, 250, 0.1)' : 'rgba(0, 123, 255, 0.1)', color: isDarkMode ? '#ffffff' : '#007bff', padding: '0.3rem 0.8rem', borderRadius: '12px', fontSize: '0.8rem' }}>React</span>
+              <span style={{ background: isDarkMode ? 'rgba(96, 165, 250, 0.1)' : 'rgba(0, 123, 255, 0.1)', color: isDarkMode ? '#ffffff' : '#007bff', padding: '0.3rem 0.8rem', borderRadius: '12px', fontSize: '0.8rem' }}>Next.js</span>
+              <span style={{ background: isDarkMode ? 'rgba(96, 165, 250, 0.1)' : 'rgba(0, 123, 255, 0.1)', color: isDarkMode ? '#ffffff' : '#007bff', padding: '0.3rem 0.8rem', borderRadius: '12px', fontSize: '0.8rem' }}>TypeScript</span>
+              <span style={{ background: isDarkMode ? 'rgba(96, 165, 250, 0.1)' : 'rgba(0, 123, 255, 0.1)', color: isDarkMode ? '#ffffff' : '#007bff', padding: '0.3rem 0.8rem', borderRadius: '12px', fontSize: '0.8rem' }}>TailwindCSS</span>
+              <span style={{ background: isDarkMode ? 'rgba(96, 165, 250, 0.1)' : 'rgba(0, 123, 255, 0.1)', color: isDarkMode ? '#ffffff' : '#007bff', padding: '0.3rem 0.8rem', borderRadius: '12px', fontSize: '0.8rem' }}>GraphQL</span>
+              <span style={{ background: isDarkMode ? 'rgba(96, 165, 250, 0.1)' : 'rgba(0, 123, 255, 0.1)', color: isDarkMode ? '#ffffff' : '#007bff', padding: '0.3rem 0.8rem', borderRadius: '12px', fontSize: '0.8rem' }}>Jest</span>
+              <span style={{ background: isDarkMode ? 'rgba(96, 165, 250, 0.1)' : 'rgba(0, 123, 255, 0.1)', color: isDarkMode ? '#ffffff' : '#007bff', padding: '0.3rem 0.8rem', borderRadius: '12px', fontSize: '0.8rem' }}>Cypress</span>
             </div>
           </div>
 
           {/* Experiencia 2 - Ministerio */}
           <div style={{
-            background: 'rgba(30, 41, 59, 0.6)',
-            border: '1px solid rgba(71, 85, 105, 0.3)',
+            background: isDarkMode 
+              ? 'rgba(30, 41, 59, 0.6)' 
+              : '#f8f9fa',
+            border: isDarkMode 
+              ? '1px solid rgba(71, 85, 105, 0.3)' 
+              : '1px solid #dee2e6',
             borderRadius: '12px',
             padding: '2rem',
             marginBottom: '2rem',
@@ -125,7 +188,7 @@ export default function Home() {
             <div style={{ marginBottom: '1rem' }}>
               <span style={{
                 background: 'rgba(96, 165, 250, 0.1)',
-                color: '#ffffff',
+                color: isDarkMode ? '#ffffff' : '#000000',
                 padding: '0.3rem 0.8rem',
                 borderRadius: '12px',
                 fontSize: '0.9rem',
@@ -153,11 +216,11 @@ export default function Home() {
         </div>
         
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
-              <span style={{ background: 'rgba(96, 165, 250, 0.1)', color: '#ffffff', padding: '0.3rem 0.8rem', borderRadius: '12px', fontSize: '0.8rem' }}>CSS</span>
-              <span style={{ background: 'rgba(96, 165, 250, 0.1)', color: '#ffffff', padding: '0.3rem 0.8rem', borderRadius: '12px', fontSize: '0.8rem' }}>Bootstrap</span>
-              <span style={{ background: 'rgba(96, 165, 250, 0.1)', color: '#ffffff', padding: '0.3rem 0.8rem', borderRadius: '12px', fontSize: '0.8rem' }}>JavaScript</span>
-              <span style={{ background: 'rgba(96, 165, 250, 0.1)', color: '#ffffff', padding: '0.3rem 0.8rem', borderRadius: '12px', fontSize: '0.8rem' }}>Agile/Scrum</span>
-              <span style={{ background: 'rgba(96, 165, 250, 0.1)', color: '#ffffff', padding: '0.3rem 0.8rem', borderRadius: '12px', fontSize: '0.8rem' }}>HTML5</span>
+              <span style={{ background: isDarkMode ? 'rgba(96, 165, 250, 0.1)' : 'rgba(0, 123, 255, 0.1)', color: isDarkMode ? '#ffffff' : '#007bff', padding: '0.3rem 0.8rem', borderRadius: '12px', fontSize: '0.8rem' }}>CSS</span>
+              <span style={{ background: isDarkMode ? 'rgba(96, 165, 250, 0.1)' : 'rgba(0, 123, 255, 0.1)', color: isDarkMode ? '#ffffff' : '#007bff', padding: '0.3rem 0.8rem', borderRadius: '12px', fontSize: '0.8rem' }}>Bootstrap</span>
+              <span style={{ background: isDarkMode ? 'rgba(96, 165, 250, 0.1)' : 'rgba(0, 123, 255, 0.1)', color: isDarkMode ? '#ffffff' : '#007bff', padding: '0.3rem 0.8rem', borderRadius: '12px', fontSize: '0.8rem' }}>JavaScript</span>
+              <span style={{ background: isDarkMode ? 'rgba(96, 165, 250, 0.1)' : 'rgba(0, 123, 255, 0.1)', color: isDarkMode ? '#ffffff' : '#007bff', padding: '0.3rem 0.8rem', borderRadius: '12px', fontSize: '0.8rem' }}>Agile/Scrum</span>
+              <span style={{ background: isDarkMode ? 'rgba(96, 165, 250, 0.1)' : 'rgba(0, 123, 255, 0.1)', color: isDarkMode ? '#ffffff' : '#007bff', padding: '0.3rem 0.8rem', borderRadius: '12px', fontSize: '0.8rem' }}>HTML5</span>
             </div>
           </div>
         </div>
