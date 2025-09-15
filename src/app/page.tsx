@@ -228,16 +228,6 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="card card--elevated mt-5" style={{ textAlign: 'center', padding: '3rem' }}>
-        <h2 className="text--gradient mb-3">¿Listo para transformar tu nutrición?</h2>
-        <p className="mb-4" style={{ fontSize: '1.1rem', color: '#666' }}>
-          Únete a miles de usuarios que ya están mejorando su salud con Julian Quinteiro Frontend developer
-        </p>
-        <div className="d-flex-center" style={{ gap: '1rem' }}>
-          <button className="btn btn--large animate-pulse">Registrarse Gratis</button>
-          <button className="btn btn--outline btn--large">Contactar</button>
-        </div>
-      </div>
     </main>
   )
 }
