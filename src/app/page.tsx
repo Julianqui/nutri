@@ -38,7 +38,7 @@ export default function Home() {
       </div>
 
       <div className="hero animate-fade-in-up">
-        <h1>🥗 Julian Quinteiro</h1>
+        <h1>Julian Quinteiro</h1>
         <p>Frontend developer</p>
         <div className="tech-stack" style={{ marginTop: '2rem', textAlign: 'center' }}>
           <p style={{ marginBottom: '1rem', fontSize: '1.1rem', fontWeight: '600', color: '#60a5fa' }}>Tecnologías:</p>
