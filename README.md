@@ -1,6 +1,6 @@
 # 🥗 Julian Quinteiro Frontend developer
 
-Una aplicación de personal desarrollada con Next.js 14 y TypeScript.
+Una aplicación personal desarrollada con Next.js 14 y TypeScript.
 
 ## Características
 
