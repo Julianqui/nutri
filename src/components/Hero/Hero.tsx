@@ -93,7 +93,7 @@ export default function Hero({
       </div>
       
       <h1>Julian Quinteiro</h1>
-      <p>Frontend developer</p>
+      <h3>Frontend developer</h3>
       
       {/* Social Links */}
       <div style={{ 
