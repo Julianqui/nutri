@@ -29,6 +29,69 @@ export default function Hero({
 
   return (
     <div className={`hero animate-fade-in-up ${className}`}>
+      {/* Profile Photo */}
+      <div style={{
+        display: 'flex',
+        justifyContent: 'center',
+        marginBottom: '2rem'
+      }}>
+        <div style={{
+          width: '150px',
+          height: '150px',
+          borderRadius: '50%',
+          overflow: 'hidden',
+          border: isDarkMode 
+            ? '4px solid rgba(96, 165, 250, 0.3)' 
+            : '4px solid rgba(0, 123, 255, 0.3)',
+          boxShadow: isDarkMode 
+            ? '0 8px 32px rgba(96, 165, 250, 0.2)' 
+            : '0 8px 32px rgba(0, 123, 255, 0.2)',
+          transition: 'all 0.3s ease',
+          position: 'relative'
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.transform = 'scale(1.05)';
+          e.currentTarget.style.boxShadow = isDarkMode 
+            ? '0 12px 40px rgba(96, 165, 250, 0.3)' 
+            : '0 12px 40px rgba(0, 123, 255, 0.3)';
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.transform = 'scale(1)';
+          e.currentTarget.style.boxShadow = isDarkMode 
+            ? '0 8px 32px rgba(96, 165, 250, 0.2)' 
+            : '0 8px 32px rgba(0, 123, 255, 0.2)';
+        }}
+        >
+          <img 
+            src="/profile-photo.jpg" 
+            alt="Julian Quinteiro" 
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              objectPosition: 'center'
+            }}
+            onError={(e) => {
+              // Fallback si la imagen no se carga
+              e.currentTarget.style.display = 'none';
+              e.currentTarget.parentElement!.innerHTML = `
+                <div style="
+                  width: 100%;
+                  height: 100%;
+                  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  color: white;
+                  font-size: 2rem;
+                  font-weight: bold;
+                ">JQ</div>
+              `;
+            }}
+          />
+        </div>
+      </div>
+      
       <h1>Julian Quinteiro</h1>
       <p>Frontend developer</p>
       
