@@ -24,9 +24,9 @@ export const getExperienceTitleStyles = (isDarkMode: boolean): CSSProperties => 
 });
 
 export const getExperienceContentStyles = (isDarkMode: boolean): CSSProperties => ({
-  maxWidth: '1000px',
+  maxWidth: '1400px',
   margin: '0 auto',
-  padding: '0 2rem'
+  padding: '0 3rem'
 });
 
 export const getExperienceCardStyles = (isDarkMode: boolean): CSSProperties => ({

@@ -18,32 +18,31 @@ export default function Home() {
 
   return (
     <>
+      {/* Animated Background */}
+      <AnimatedBackground variant="medium" />
+      
+      {/* Cursor Trail Effect */}
+      {showCursorTrail && <CursorTrail variant="neon" maxDots={20} />}
+      
+      {/* Cursor Trail Toggle Switch */}
+      <div style={{ 
+        position: 'fixed', 
+        top: '20px', 
+        right: '20px', 
+        zIndex: 1000 
+      }}>
+        <Button
+          onClick={toggleCursorTrail}
+          isDarkMode={isDarkMode}
+        >
+          {showCursorTrail ? '✨ Estela ON' : '🚫 Estela OFF'}
+        </Button>
+      </div>
+
+      <Hero isDarkMode={isDarkMode} />
+      
       <main className={`container ${isDarkMode ? 'dark-theme' : 'light-theme'}`}>
-        {/* Animated Background */}
-        <AnimatedBackground variant="medium" />
-        
-        {/* Cursor Trail Effect */}
-        {showCursorTrail && <CursorTrail variant="neon" maxDots={20} />}
-        
-        {/* Cursor Trail Toggle Switch */}
-        <div style={{ 
-          position: 'fixed', 
-          top: '20px', 
-          right: '20px', 
-          zIndex: 1000 
-        }}>
-          <Button
-            onClick={toggleCursorTrail}
-            isDarkMode={isDarkMode}
-          >
-            {showCursorTrail ? '✨ Estela ON' : '🚫 Estela OFF'}
-          </Button>
-        </div>
-
-        <Hero isDarkMode={isDarkMode} />
-        
         <Experience isDarkMode={isDarkMode} />
-
       </main>
       
       <Footer isDarkMode={isDarkMode} />
