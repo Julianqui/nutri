@@ -111,7 +111,12 @@ export const getSkillBadgeStyles = (isDarkMode: boolean): CSSProperties => ({
   color: isDarkMode ? '#ffffff' : '#007bff',
   padding: '0.3rem 0.8rem',
   borderRadius: '12px',
-  fontSize: '0.8rem'
+  fontSize: '0.8rem',
+  display: 'flex',
+  alignItems: 'center',
+  border: isDarkMode 
+    ? '1px solid rgba(96, 165, 250, 0.2)' 
+    : '1px solid rgba(0, 123, 255, 0.2)'
 });
 
 export const experienceVariants = {

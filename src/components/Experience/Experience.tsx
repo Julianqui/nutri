@@ -3,6 +3,22 @@
 import React from 'react';
 import { experienceVariants } from './Experience.styles';
 
+// Technology icons mapping
+const techIcons: { [key: string]: string } = {
+  'React': '⚛',
+  'Next.js': '▲',
+  'TypeScript': 'TS',
+  'TailwindCSS': 'TW',
+  'GraphQL': 'GQ',
+  'Jest': 'JT',
+  'Cypress': 'CY',
+  'CSS': 'CSS',
+  'Bootstrap': 'BS',
+  'JavaScript': 'JS',
+  'Agile/Scrum': 'AG',
+  'HTML5': 'H5'
+};
+
 interface ExperienceData {
   id: string;
   company: string;
@@ -94,6 +110,19 @@ export default function Experience({
             <div style={styles.skillsContainer}>
               {experience.skills.map((skill, index) => (
                 <span key={index} style={styles.skillBadge}>
+                  {techIcons[skill] && (
+                    <span style={{
+                      marginRight: '0.4rem',
+                      fontSize: '0.7rem',
+                      fontWeight: 'bold',
+                      background: 'rgba(96, 165, 250, 0.2)',
+                      padding: '0.1rem 0.3rem',
+                      borderRadius: '4px',
+                      border: '1px solid rgba(96, 165, 250, 0.3)'
+                    }}>
+                      {techIcons[skill]}
+                    </span>
+                  )}
                   {skill}
                 </span>
               ))}
