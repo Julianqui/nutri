@@ -4,7 +4,8 @@ import { useState } from 'react';
 import Button from '../components/Button/Button';
 import Hero from '../components/Hero/Hero';
 import Experience from '../components/Experience/Experience';
-import CursorTrail from '../components/CursorTrail/CursorTrail'; 
+import CursorTrail from '../components/CursorTrail/CursorTrail';
+import AnimatedBackground from '../components/AnimatedBackground/AnimatedBackground'; 
 
 export default function Home() {
   const [isDarkMode, setIsDarkMode] = useState(true);
@@ -16,6 +17,9 @@ export default function Home() {
 
   return (
     <main className={`container ${isDarkMode ? 'dark-theme' : 'light-theme'}`}>
+      {/* Animated Background */}
+      <AnimatedBackground variant="medium" />
+      
       {/* Cursor Trail Effect */}
       {showCursorTrail && <CursorTrail variant="neon" maxDots={20} />}
       
